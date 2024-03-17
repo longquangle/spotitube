@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Home Page</h1>
+    {% if current_user.spotify_playlist_name and current_user.spotify_playlist_name and current_user.youtube_access_token and current_user.youtube_refresh_token and current_user.youtube_playlist_id %}
+    <p>You currently select <span class="playlist-name">{{current_user.spotify_playlist_name}}</span> playlist from Spotify. <a href="/spotify_playlists" class="green-link">Click here</a> to change your playlist.</p>
+    <p><a href="/spotify_remove_playlist" class="green-link">Click here</a> to remove playlist and stop synchronizing selected playlist on YouTube.</p>
+    {% else %}
+        {% if not current_user.spotify_playlist_name or not current_user.spotify_playlist_name %}
+        <p>You have not selected any playlist from Spotify. <a href="/spotify_playlists" class="green-link">Click here</a> to select your playlist.</p>
+        {% elif not current_user.youtube_access_token or not current_user.youtube_refresh_token or not current_user.youtube_playlist_id %}
+        <p>You have not logged in with YouTube.<a href="/youtube_login" class="green-link">Log in with YouTube here.</a></p>
+        {% endif %}
+    {% endif %}
+{% endblock content %}
+

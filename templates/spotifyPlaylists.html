@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="spotify-playlists">
+
+</div>
+<form action="" method="post">
+    {{form.hidden_tag()}}
+    <div class="title-and-button">
+        <h2>Change Playlists</h2>
+        {{form.selectPlaylistButton(class="confirm-button")}}
+    </div>
+    <div class="list">
+        {% for subfield in form.radio %}
+        <label>
+            <div class="item">
+                {{subfield}}
+                <img src="{{images[loop.index - 1]}}" width="160" height="160">
+                <h4>{{subfield.label}}</h4>
+                <p>By {{current_user.spotify_username}}</p>
+            </div>
+        </label>
+        {% endfor %}
+    </div>
+</form>
+{% endblock content %}
