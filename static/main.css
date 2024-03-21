@@ -31,8 +31,6 @@ body {
   margin: auto;
   width: fit-content;
   height: fit-content;
-  /* background-color: #121212;
-  border-radius: 6px; */
 }
 .sign-in-page .sign-in-box h1 {
   margin: 35px;
@@ -49,6 +47,13 @@ body {
   cursor: pointer;
   margin: 15px ;
   text-decoration: none;
+}
+.sign-in-page .sign-in-box .button:hover,
+.sign-in-page .sign-in-box .button:active,
+.sign-in-page .sign-in-box .button:focus {
+  background-color: #232323;
+  color: #ffffff;
+  transition: background-color 75ms linear;
 }
 .sign-in-page .sign-in-box .link {
 
