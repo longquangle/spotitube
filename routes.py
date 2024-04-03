@@ -42,7 +42,7 @@ def spotify_login():
         'response_type': 'code',
         'scope': scope,
         'redirect_uri': 'http://localhost:5000/spotify_callback',
-        'show_dialog': False 
+        'show_dialog': True
     }
 
     auth_url = f"https://accounts.spotify.com/authorize?{urlencode(params)}"

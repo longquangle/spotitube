@@ -22,7 +22,6 @@ class User(db.Model, UserMixin):
     spotify_expires_at = db.Column(db.Float)
     spotify_playlist_url = db.Column(db.String(150))
     spotify_playlist_name = db.Column(db.String(150))
-
     youtube_access_token = db.Column(db.String(150))
     youtube_refresh_token = db.Column(db.String(100))
     youtube_playlist_id = db.Column(db.String(100))
