@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Report song</h1>
+<p>Please paste the song link (NOT embed track) from Spotify Share button:</p>
+
+<form action="" method="post">
+    {{form.hidden_tag()}}
+    {{form.songLinkStringField}}
+    {{form.submitSongLinkButton(class="confirm-button")}}
+</form>
+{% endblock content %}

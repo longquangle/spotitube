@@ -23,13 +23,15 @@
             <a href="/" class="logo">SpotiTube</a>
             {% if current_user.spotify_playlist_name and current_user.spotify_playlist_url %}
             <a href="/spotify_playlists" class="link">Change playlist</a>
+            <a href="/spotify_remove_playlist" class="link">Remove playlist</a>
             {% else %}
             <a href="/spotify_playlists" class="link">Add playlist</a>
+            <a href="/report_song" class="link">Report song</a>
             {% endif %}
-            <a href="/spotify_remove_playlist" class="link">Remove playlist</a>
           </div>
           <div class="navbar">
               <a href="/about" class="link" target="_blank">About</a>
+              <a href="/privacy" class="link" target="_blank">Privacy</a>
               <a href="/account" class="link">Account</a>
               <a href="/spotify_logout" class="button">Log out</a>
           </div>

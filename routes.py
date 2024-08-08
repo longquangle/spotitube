@@ -4,8 +4,8 @@ from urllib.parse import urlencode
 from flask import redirect, request, render_template, url_for
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_wtf import FlaskForm
-from wtforms import SubmitField, RadioField
-from wtforms.validators import InputRequired
+from wtforms import SubmitField, RadioField, StringField
+from wtforms.validators import InputRequired, Length, ValidationError
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
@@ -174,6 +174,19 @@ def youtube_playlist():
         #     utils.youtube_add_song(current_user, video_id, youtube)
 
     return render_template('youtubePlaylist.html', all_songs = all_songs, title="YouTube Playlist")
+
+@app.route('/report_song', methods = ['GET', 'POST'])
+def report_song():
+    # declare radio button inside after obtain the playlist
+    class reportSong(FlaskForm):
+        songLinkStringField = StringField("Song link", validators=[InputRequired(message='Paste one link'), 
+                                                                   Length(min=73, max = 73, message='Link format is incorrect')])
+        submitSongLinkButton = SubmitField("Submit song link")
+    form = reportSong()
+
+    if form.validate_on_submit():
+        render_template('emptyLayout.html')
+    return render_template('reportSong.html', form = form, title = 'Report Song')
 
 @app.route('/spotify_logout')
 def spotify_logout():
