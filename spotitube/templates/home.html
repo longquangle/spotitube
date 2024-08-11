@@ -2,13 +2,15 @@
 {% block content %}
 <h1>Home Page</h1>
     {% if current_user.spotify_playlist_name and current_user.spotify_playlist_name and current_user.youtube_access_token and current_user.youtube_refresh_token and current_user.youtube_playlist_id %}
-    <p>You currently select <span class="playlist-name">{{current_user.spotify_playlist_name}}</span> playlist from Spotify. <a href="/spotify_playlists" class="green-link">Change your selected Spotify playlist</a>.</p>
-    <p><a href="/spotify_remove_playlist" class="green-link">Remove playlist and stop synchronizing</a> selected playlist to YouTube.</p>
+        <h2 class="small-header-outline">Status: <span style="color: #1ed760;">Working</span></h2>
+        <p class="bullet-point">Currently synchronizing <span class="playlist-name">{{current_user.spotify_playlist_name}}</span> Spotify playlist to YouTube. <a href="/spotify_playlists" class="green-link">Change Spotify playlist</a>.</p>
+        <p class="bullet-point"><a href="/spotify_remove_playlist" class="green-link">Remove and stop synchronizing</a> selected playlist to YouTube.</p>
     {% else %}
+        <h2 class="small-header-outline">Status: <span style="color: #d71e1e;">Not working </span></h2>
         {% if not current_user.spotify_playlist_name or not current_user.spotify_playlist_name %}
-        <p>You have not selected any playlist from Spotify. <a href="/spotify_playlists" class="green-link">Click here</a> to select your playlist.</p>
+        <p class="bullet-point">You have not selected any playlist from Spotify. <a href="/spotify_playlists" class="green-link">Select Spotify playlist</a>.</p>
         {% elif not current_user.youtube_access_token or not current_user.youtube_refresh_token or not current_user.youtube_playlist_id %}
-        <p>You have not logged in with YouTube.<a href="/youtube_login" class="green-link">Log in with YouTube here.</a></p>
+        <p class="bullet-point">You have not logged in with YouTube.<a href="/youtube_login" class="green-link">Log in with YouTube here.</a></p>
         {% endif %}
     {% endif %}
 {% endblock content %}

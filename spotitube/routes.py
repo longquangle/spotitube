@@ -199,7 +199,7 @@ def account():
     return render_template('account.html', title='Account')
 
 
-# @scheduler.task('cron', id='add_new_songs', hour=1)
+# @scheduler.task('cron', id='add_new_songs', hour=24)
 # def add_new_songs():
 #     print('Running background task')
 #     with scheduler.app.app_context():

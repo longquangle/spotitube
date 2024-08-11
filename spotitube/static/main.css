@@ -220,6 +220,7 @@ input + div label {
 .green-link {
   color:#1ed760;
   font-size: 17px;
+  font-weight:700;
 }
 
 .page-title {

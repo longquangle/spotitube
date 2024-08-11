@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
-
-
 {% block content %}
-<h1>Your playlist is created</h1>
-<p>{{all_songs}}</p>
-
+<h1>YouTube playlist created</h1>
+<h2>Songs added:</h2>
+{% for song in all_songs %}
+<p class="bullet-point">{{song}}</p>
+{% endfor %}
 {% endblock content %}

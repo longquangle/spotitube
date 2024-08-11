@@ -79,7 +79,7 @@ def spotify_get_songs(user):
     songs = response.json()
     if 'error' in response:
         return []
-    all_songs = [item['track']['name'] + ' ' + ' '.join([artist['name'] for artist in item['track']['artists'] if artist['name']]) for item in songs['items']]
+    all_songs = [item['track']['name'] + ' by ' + ' '.join([artist['name'] for artist in item['track']['artists'] if artist['name']]) for item in songs['items']]
     # allowing an unlimited number of songs for now
     while songs['next']:
         response = requests.get(songs['next'], headers=headers)
