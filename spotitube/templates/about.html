@@ -1,13 +1,23 @@
 {% extends "emptyLayout.html" %}
 {% block content %}
-<h1>About SpotiTube</h1>
-<h2>Effortlessly move your music!</h2>
-<p>We help you switch between music platforms without losing your playlists. Transfer your Spotify playlists to YouTube in just a few clicks.</p>
-<h2>Why Choose Us?</h2>
-<p>Simple & Fast: Our user-friendly platform makes transferring playlists a breeze.</p>
-<p>Unwavering Security: We prioritize your privacy. Industry-standard encryption technology keeps your login credentials safe and sound.</p>
-<p>Free & Scalable: Transfer individual playlists or your entire music library (limitations may apply).</p>
-<h2>Benefits</h2>
-<p>Save Time: Don't waste time recreating playlists.</p>
-<p>Stay Updated: Keep your meticulously crafted playlists synchronized.</p>
+<div class="main-container">
+    <div class="topbar">
+        <div class="navbar">
+          <a href="/" class="logo">SpotiTube</a>
+        </div>
+        <div class="navbar">
+            <a href="/about" class="link" target="_blank">About</a>
+            <a href="/privacy" class="link" target="_blank">Privacy</a>
+        </div>
+    </div>
+</div>
+<h2 class="small-header-outline">About</h2>
+<p class="bullet-point"><span class="bullet-highlight">SpotiTube:</span> seamless solution for transferring music playlists. With just a few clicks, you can effortlessly migrate their Spotify playlists to YouTube, preserving your carefully curated selections.</p>
+<h2 class="small-header-outline">Why Choose SpotiTube?</h2>
+<p class="bullet-point"><span class="bullet-highlight">Simplicity and Speed:</span> Our intuitive platform ensures a swift and hassle-free playlist transfer process.</p>
+<p class="bullet-point"><span class="bullet-highlight">Robust Security:</span> We prioritize user privacy and employ industry-leading encryption to safeguard login credentials.</p>
+<p class="bullet-point"><span class="bullet-highlight">Free and Flexible:</span> Enjoy complimentary playlist transfers, with the ability to migrate individual playlists or entire music libraries (subject to certain limitations).</p>
+<h2 class="small-header-outline">Benefits</h2>
+<p class="bullet-point"><span class="bullet-highlight">Time Savings:</span> Avoid the tedious task of recreating playlists from scratch.</p>
+<p class="bullet-point"><span class="bullet-highlight">Playlist Preservation:</span> Maintain the integrity of your meticulously curated music collections across platforms.</p>
 {% endblock content %}

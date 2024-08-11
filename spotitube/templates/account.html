@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>{{current_user.spotify_username}}</h1>
-<p><a href="/privacy" class="green-link" target="_blank">Privacy</a>.</p>
+<h1>Account Page</h1>
+
+<p><span class="bullet-highlight">Spotify username:</span> <span class="playlist-name">{{current_user.spotify_username}}</span></p>
+{% if current_user.spotify_playlist_name %}
+<p><span class="bullet-highlight">Spotify playlist:</span> <span class="playlist-name">{{current_user.spotify_playlist_name}}</span></p>
+{% else %}
+<p>No Spotify playlist selected.</p>
+{% endif %}
+<p></p>
 {% endblock content %}

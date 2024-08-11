@@ -221,3 +221,21 @@ input + div label {
   color:#1ed760;
   font-size: 17px;
 }
+
+.page-title {
+  margin: 30px 50px;
+}
+
+.small-header-outline {
+  margin: 30px 200px;
+}
+
+.bullet-point{
+  margin: 25px 120px;
+}
+
+.bullet-highlight {
+  font-size: 18px;
+  font-weight: 600;
+  color:#1ed760;
+}

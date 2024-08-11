@@ -170,8 +170,8 @@ def youtube_playlist():
     for song in all_songs:
         video_id = utils.youtube_search(song, youtube)
         # only add video if there is a search result, ignore otherwise
-        # if video_id:
-        #     utils.youtube_add_song(current_user, video_id, youtube)
+        if video_id:
+            utils.youtube_add_song(current_user, video_id, youtube)
 
     return render_template('youtubePlaylist.html', all_songs = all_songs, title="YouTube Playlist")
 
