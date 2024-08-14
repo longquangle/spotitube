@@ -1,5 +1,5 @@
 # SpotiTube
-
+Full stack web appplication to transfer and continuously update a playlist from Spotify to YouTube. The app follows standard OAuth 2.0 flow to securely log in the users from both Spotify and Google. Everyday, a scheduler periodically scans and updates newly added songs from selected playlist from Spotify to YouTube.
 ## Step 1: Create Spotify app
 Visit https://developer.spotify.com/dashboard to create and app set redirect URIs as ```http://localhost:5000/spotify_callback```. Under "Which API/SDKs are you planning to use?", check "Web API".\
 From the app dashboard, select the button "Settings" and click "View client secret". You can set the environment variables ```SPOTIFY_CLIENT_ID``` and ```SPOTIFY_CLIENT_SECRET```.
